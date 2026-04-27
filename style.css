@@ -1,39 +1,101 @@
-/* ==================== COUNTDOWN ==================== */
-.countdown-card {
-    background-color: #2A2A3A;
-    border: 3px solid var(--verde);
-    border-radius: 20px;
-    padding: 30px 20px;
-    margin-top: 40px;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+:root {
+    --cor-de-fundo: #1E1E1E;
+    --verde: #6FFF57;
+    --branco: #FFFFFF;
+    --card-bg: #2A2A3A;
+    --hover: #4A4678;
 }
 
-.countdown-header {
-    margin-bottom: 15px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#objetivo-ativo {
-    font-size: 22px;
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco);
+    font-family: 'Chakra Petch', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.conteudo-principal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.titulo-principal {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.titulo-principal span {
     color: var(--verde);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    background-color: #24243A;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-bottom: 4px solid var(--verde);
+}
+
+.tab {
+    flex: 1;
+    padding: 16px 20px;
+    background: transparent;
+    border: none;
+    color: #AAA;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.tab.ativo {
+    background-color: var(--card-bg);
+    color: white;
+    border-bottom: 4px solid var(--verde);
     font-weight: 700;
 }
 
+/* Card Principal */
+.objetivo-card {
+    background-color: var(--card-bg);
+    border: 3px solid var(--verde);
+    border-radius: 0 0 20px 20px;
+    padding: 40px 30px;
+    text-align: center;
+    min-height: 320px;
+}
+
+.texto-objetivo {
+    font-size: 26px;
+    margin-bottom: 30px;
+    min-height: 80px;
+}
+
+/* Countdown */
 .countdown-titulo {
     color: var(--verde);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .countdown-timer {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
@@ -44,28 +106,87 @@
 }
 
 .number {
-    font-size: 52px;
+    font-size: 58px;
     font-weight: 700;
-    color: #FFFFFF;
     line-height: 1;
-    font-family: 'Chakra Petch', sans-serif;
-    min-width: 80px;
 }
 
 .label {
     font-size: 14px;
     color: var(--verde);
-    margin-top: 6px;
+    margin-top: 8px;
     text-transform: lowercase;
 }
 
-/* Responsivo */
-@media (max-width: 500px) {
-    .countdown-timer {
-        gap: 15px;
-    }
-    .number {
-        font-size: 42px;
-        min-width: 60px;
-    }
+/* Botão adicionar */
+.botao-adicionar {
+    background-color: var(--verde);
+    color: #1E1E1E;
+    font-weight: 700;
+    padding: 14px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s;
 }
+
+.botao-adicionar:hover {
+    background-color: #a1ff8a;
+    transform: scale(1.05);
+}
+
+/* Modal (mesmo de antes) */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background-color: #2A2A3A;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 420px;
+    border: 3px solid var(--verde);
+}
+
+.modal-conteudo h3 {
+    margin-bottom: 20px;
+    color: var(--verde);
+}
+
+#input-objetivo {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background-color: #1E1E1E;
+    border: 2px solid #3A375E;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-botoes {
+    display: flex;
+    gap: 12px;
+}
+
+.botao-cancelar, .botao-salvar {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.botao-cancelar { background-color: #555; color: white; }
+.botao-salvar { background-color: var(--verde); color: #1E1E1E; }
