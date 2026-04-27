@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Objetivos do Ano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="conteudo-principal">
+        <h2 class="titulo-principal">Meus Objetivos do Ano<span>_</span></h2>
+        
+        <div class="botoes" id="lista-objetivos">
+            <!-- Os objetivos serão inseridos via JavaScript -->
+        </div>
+
+        <button class="botao-adicionar" id="btn-adicionar">
+            + Adicionar Novo Objetivo
+        </button>
+    </section>
+
+    <!-- Modal para adicionar/editar objetivo -->
+    <div class="modal" id="modal">
+        <div class="modal-conteudo">
+            <h3 id="modal-titulo">Novo Objetivo</h3>
+            <input type="text" id="input-objetivo" placeholder="Digite o objetivo..." maxlength="80">
+            
+            <div class="modal-botoes">
+                <button class="botao-cancelar" id="btn-cancelar">Cancelar</button>
+                <button class="botao-salvar" id="btn-salvar">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
